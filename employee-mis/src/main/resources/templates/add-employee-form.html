@@ -11,12 +11,16 @@
     <hr/>
 
     <form th:action="@{/saveEmployee}" th:object="${employee}" method="POST">
-        <input type="text" th:filed="*{name}" placeholder="Your name" class="form-control col-2 mb-2"/>
-        <input type="text" th:filed="*{email}" placeholder="Your email" class="form-control col-2 mb-2"/>
-        <input type="text" th:filed="*{department}" placeholder="Your Department" class="form-control col-2 mb-2"/>
+        <input type="text" th:field="*{name}" placeholder="Your name" class="form-control col-2 mb-2"/>
+        <input type="text" th:field="*{email}" placeholder="Your email" class="form-control col-2 mb-2"/>
+        <input type="text" th:field="*{department}" placeholder="Your Department" class="form-control col-2 mb-2"/>
 
         <button class="btn btn-primary" type="submit">Save</button>
     </form>
+
+    <hr/>
+
+    <a th:href="@{/list}">Back to list</a>
 </div>
 </body>
 </html>

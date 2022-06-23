@@ -3,10 +3,7 @@ package com.startup.employeesmis.controller;
 import com.startup.employeesmis.models.Employee;
 import com.startup.employeesmis.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -37,5 +34,14 @@ public class EmployeeController {
     public String saveEmployee(@ModelAttribute Employee employee){
         employeeRepository.save(employee);
         return "redirect:/list";
+    }
+
+    @GetMapping("/showUpdateForm")
+    public ModelAndView showUpdateForm(@RequestParam Long employeeId){
+        ModelAndView mav = new ModelAndView("add-employee-form");
+        Employee foundEmployee = employeeRepository.findById(employeeId).get();
+        mav.addObject("employee", foundEmployee);
+
+        return mav;
     }
 }
