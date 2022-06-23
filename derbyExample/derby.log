@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Thu Jun 23 15:06:43 EET 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0181-90ac-0abb-0000032f7250 
+on database directory memory:/home/gershom/Documents/Gersh/NE-EXAMS/JAVA/spring-boot/derbyExample/f05d014f-93f6-4641-a4e4-61b47da796e4 with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@3d4eac69 
+Loaded from file:/home/gershom/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Private Build
+java.runtime.version=11.0.15+10-Ubuntu-0ubuntu0.20.04.1
+user.dir=/home/gershom/Documents/Gersh/NE-EXAMS/JAVA/spring-boot/derbyExample
+os.name=Linux
+os.arch=amd64
+os.version=5.13.0-51-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
