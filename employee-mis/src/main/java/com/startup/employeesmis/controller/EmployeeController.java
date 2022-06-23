@@ -4,6 +4,8 @@ import com.startup.employeesmis.models.Employee;
 import com.startup.employeesmis.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -29,5 +31,11 @@ public class EmployeeController {
         Employee newEmployee = new Employee();
         mav.addObject("employee", newEmployee);
         return mav;
+    }
+
+    @PostMapping("/saveEmployee")
+    public String saveEmployee(@ModelAttribute Employee employee){
+        employeeRepository.save(employee);
+        return "redirect:/list";
     }
 }
