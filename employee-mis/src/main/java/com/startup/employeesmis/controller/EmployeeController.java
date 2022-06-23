@@ -32,7 +32,7 @@ public class EmployeeController {
 
     @PostMapping("/saveEmployee")
     public String saveEmployee(@ModelAttribute Employee employee){
-        employeeRepository.save(employee);
+        employeeRepository.save(employee); // if there is "id" it will perform update
         return "redirect:/list";
     }
 
@@ -43,5 +43,11 @@ public class EmployeeController {
         mav.addObject("employee", foundEmployee);
 
         return mav;
+    }
+
+    @GetMapping("/deleteEmployee")
+    public String deleteEmployee(@RequestParam Long employeeId){
+        employeeRepository.deleteById(employeeId);
+        return "redirect:/";
     }
 }
