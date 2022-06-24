@@ -3,12 +3,13 @@ package com.startup.employeesmis.controller;
 import com.startup.employeesmis.models.Employee;
 import com.startup.employeesmis.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class EmployeeController {
 
     @Autowired
@@ -48,6 +49,6 @@ public class EmployeeController {
     @GetMapping("/deleteEmployee")
     public String deleteEmployee(@RequestParam Long employeeId){
         employeeRepository.deleteById(employeeId);
-        return "redirect:/";
+        return "redirect:/list";
     }
 }
